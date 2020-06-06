@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'goodlife';
+  actualPage= 0;
+
+  pageSwitch(page) {
+    this.actualPage = page;
+  }
 }
