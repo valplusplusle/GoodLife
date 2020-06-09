@@ -1,1 +1,10 @@
-<p>profile works!</p>
+<div class="input-group mb-3" *ngIf="!userNameIsSet">
+    <input #userNameFromInput type="text" class="form-control" value="{{ userName }}">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" (click)="setUsername(userNameFromInput.value)">Set</button>
+    </div>
+</div>
+
+<div *ngIf="userNameIsSet">
+    <div class="alert alert-primary">Hallo {{ userName }}! Willkommen zurück!</div>
+</div>

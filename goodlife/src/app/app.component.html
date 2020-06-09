@@ -2,19 +2,19 @@
 <div class="toolbar" role="banner">
   <span class="btn whiteFont"><b>GoodLife</b></span>
   <div class="spacer"></div>
-  <span class="btn whiteFont" (click)="pageSwitch(1)">Quest</span>
-  <span class="btn whiteFont" (click)="pageSwitch(2)">Sport</span>
+  <span class="btn whiteFont" (click)="pageSwitch(1)">Sport</span>
+  <span class="btn whiteFont" (click)="pageSwitch(2)">Body-Feel</span>
   <span class="btn whiteFont" (click)="pageSwitch(3)">Meal</span>
-  <span class="btn whiteFont" (click)="pageSwitch(4)">Shop</span>
+  <span class="btn whiteFont" (click)="pageSwitch(4)">Sustainability</span>
   <i class="fa fa-user userIcon" (click)="pageSwitch(0)"></i>
 </div>
 
 <div class="content" role="main">
   <app-profile *ngIf="actualPage == 0"></app-profile>
-  <app-quest *ngIf="actualPage == 1"></app-quest>
-  <app-sport *ngIf="actualPage == 2"></app-sport>
+  <app-sport *ngIf="actualPage == 1"></app-sport>
+  <app-bodyfeel *ngIf="actualPage == 2"></app-bodyfeel>
   <app-meal *ngIf="actualPage == 3"></app-meal>
-  <app-shop *ngIf="actualPage == 4"></app-shop>
+  <app-sustainability *ngIf="actualPage == 4"></app-sustainability>
 
 </div>
 
