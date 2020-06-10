@@ -1,5 +1,5 @@
 <div *ngFor="let quest of questArray;">
-  <div *ngIf="!questDoneIds.includes(quest.questId)" class="card cardQuest animate__animated animate__fadeInLeftBig animate__fast">
+  <div *ngIf="!questDoneIds.includes(quest.questId)" class="card cardQuest animate__animated animate__slideInUp animate__fast">
     <h5 class="card-header">{{ quest.questPoints }}</h5>
     <div class="card-body">
       <h5 class="card-title">{{ quest.questTitel }}</h5>

@@ -21,14 +21,13 @@ export class ProfileComponent implements OnInit {
 
   setOrSearchUsername() {
     this.userName = localStorage.getItem('UserName');
-    if (this.userName == null) {
+    if (this.userName == null || this.userName == "null") {
       localStorage.setItem('UserName', 'Set Your Username');
       this.userName = localStorage.getItem('UserName');
       this.userNameIsSet = false;
     } else {
       this.userNameIsSet = true;
     }
-    console.log(this.userName)
   }
 
   setUsername(userNameFromInput) {
@@ -43,7 +42,6 @@ export class ProfileComponent implements OnInit {
       localStorage.setItem('userPoints', '0');
       this.userPoints = localStorage.getItem('userPoints');
     } 
-    console.log(this.userPoints)
   }
 
   setOrGetdoneIds() {
@@ -52,7 +50,11 @@ export class ProfileComponent implements OnInit {
       localStorage.setItem('userIds', '0000');
       this.userIds = localStorage.getItem('userIds');
     } 
-    console.log(this.userIds)
+  }
+
+  resetUserName() {
+    localStorage.setItem('UserName', null);
+    this.setOrSearchUsername()
   }
 
 }

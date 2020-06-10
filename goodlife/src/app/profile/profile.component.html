@@ -6,7 +6,7 @@
 </div>
 
 <div class="animate__animated animate__tada" *ngIf="userNameIsSet">
-    <div class="alert alert-primary">Hallo {{ userName }}! Willkommen zurück!</div>
+    <div class="alert alert-primary" (click)="resetUserName()">Hallo {{ userName }}! Willkommen zurück!</div>
 </div>
 
 <div class="card text-center">
