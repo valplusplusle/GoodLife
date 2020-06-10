@@ -7,22 +7,32 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./meal.component.scss']
 })
 export class MealComponent implements OnInit {
-
-  mealArray = [];
+  questArray = [];
+  questDoneIds = localStorage.getItem('userIds');
 
   constructor() { }
 
   ngOnInit(): void {
-    this.mealArray[0] = new Quest;
-    this.mealArray[1] = new Quest;
-    this.mealArray[2] = new Quest;
+    this.questArray[0] = new Quest;
+    this.questArray[1] = new Quest;
+    this.questArray[2] = new Quest;
   }
-
-
+  addPointsAndDoneQuest(points, id) {
+    let userPoints = localStorage.getItem('userPoints');
+    userPoints = (parseInt(userPoints) + parseInt(points)).toString();
+    localStorage.setItem('userPoints', userPoints);
+    let actualIds = localStorage.getItem('userIds');
+    actualIds = actualIds + ',' + id;
+    localStorage.setItem('userIds', actualIds);
+    this.questDoneIds = localStorage.getItem('userIds');
+  }
 }
 
 class Quest {
-  mealName = 'veganer Heringssalat'
-  mealLink = 'yqGtT0c5e2U'
+  questPoints = 'Veganer Heringsalat'
+  questTitel = ''
+  questText = ''
+  questId = '0003'
+  questPointsValue = '200'
 }
 

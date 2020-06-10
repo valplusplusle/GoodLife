@@ -1,10 +1,27 @@
-<div class="input-group mb-3" *ngIf="!userNameIsSet">
+<div class="input-group mb-3 animate__animated animate__tada" *ngIf="!userNameIsSet">
     <input #userNameFromInput type="text" class="form-control" value="{{ userName }}">
     <div class="input-group-append">
       <button class="btn btn-outline-secondary" type="button" (click)="setUsername(userNameFromInput.value)">Set</button>
     </div>
 </div>
 
-<div *ngIf="userNameIsSet">
+<div class="animate__animated animate__tada" *ngIf="userNameIsSet">
     <div class="alert alert-primary">Hallo {{ userName }}! Willkommen zurück!</div>
+</div>
+
+<div class="card text-center">
+  <div class="card-header">
+    Aktueller Highscore
+  </div>
+  <div class="card-body">
+    <span class="btn btn-primary animate__animated animate__heartBeat animate__repeat-3">{{ userPoints }}</span>
+  </div>
+  <div class="card-footer text-muted">
+    "Motivation Text Here"
+  </div>
+</div>
+
+<div>
+  <br>
+  <a href="https://wa.me/?text=urlencodedtext"><div class="alert alert-success">Freunde zur App einladen: 📲 🥳 🏋️‍♀️ 🚴‍♂️ 🤽‍♀️ 🥑</div></a>
 </div>

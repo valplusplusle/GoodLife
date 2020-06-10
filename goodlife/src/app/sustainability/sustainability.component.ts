@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sustainability.component.scss']
 })
 export class SustainabilityComponent implements OnInit {
-
   questArray = [];
+  questDoneIds = localStorage.getItem('userIds');
 
   constructor() { }
 
@@ -16,11 +16,21 @@ export class SustainabilityComponent implements OnInit {
     this.questArray[1] = new Quest;
     this.questArray[2] = new Quest;
   }
-
+  addPointsAndDoneQuest(points, id) {
+    let userPoints = localStorage.getItem('userPoints');
+    userPoints = (parseInt(userPoints) + parseInt(points)).toString();
+    localStorage.setItem('userPoints', userPoints);
+    let actualIds = localStorage.getItem('userIds');
+    actualIds = actualIds + ',' + id;
+    localStorage.setItem('userIds', actualIds);
+    this.questDoneIds = localStorage.getItem('userIds');
+  }
 }
 
 class Quest {
-  questPoints = 'Trinke nur Wasser'
+  questPoints = 'Trinke heute nur Wasser'
   questTitel = ''
   questText = ''
+  questId = '0004'
+  questPointsValue = '200'
 }

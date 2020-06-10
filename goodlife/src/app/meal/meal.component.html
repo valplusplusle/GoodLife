@@ -1,6 +1,11 @@
-<div *ngFor="let meal of mealArray;" class="card cardQuest">
-    <h5 class="card-header">{{ meal.mealName }}</h5>
-    <div class="card-body">  
-        <a href="#" class="btn btn-primary">Aufgabe abgeschlossen</a>     
+<div *ngFor="let quest of questArray;">
+    <div *ngIf="!questDoneIds.includes(quest.questId)" class="card cardQuest animate__animated animate__fadeInLeftBig animate__fast">
+      <h5 class="card-header">{{ quest.questPoints }}</h5>
+      <div class="card-body">
+        <h5 class="card-title">{{ quest.questTitel }}</h5>
+        <p class="card-text">{{ quest.questText }}</p>
+        <a class="btn btn-primary" (click)="addPointsAndDoneQuest(quest.questPointsValue, quest.questId)">Aufgabe abgeschlossen</a>
+      </div>
     </div>
-</div>
+  </div>
+  

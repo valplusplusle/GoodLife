@@ -7,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
   userName: string;
+  userPoints: string;
+  userIds: string;
   userNameIsSet: boolean;
 
   constructor() { }
 
   ngOnInit(): void {
     this.setOrSearchUsername();
+    this.setOrGetPoints();
+    this.setOrGetdoneIds();
   }
 
   setOrSearchUsername() {
@@ -31,6 +35,24 @@ export class ProfileComponent implements OnInit {
     localStorage.setItem('UserName', userNameFromInput);
     this.userName = localStorage.getItem('UserName');
     this.userNameIsSet = true;
+  }
+
+  setOrGetPoints() {
+    this.userPoints = localStorage.getItem('userPoints');
+    if (this.userPoints == null) {
+      localStorage.setItem('userPoints', '0');
+      this.userPoints = localStorage.getItem('userPoints');
+    } 
+    console.log(this.userPoints)
+  }
+
+  setOrGetdoneIds() {
+    this.userIds = localStorage.getItem('userIds');
+    if (this.userIds == null) {
+      localStorage.setItem('userIds', '0000');
+      this.userIds = localStorage.getItem('userIds');
+    } 
+    console.log(this.userIds)
   }
 
 }
