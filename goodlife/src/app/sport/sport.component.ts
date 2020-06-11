@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import questData from '../quests/sport.json';
 
 @Component({
   selector: 'app-sport',
@@ -7,31 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SportComponent implements OnInit {
   questArray = [];
-  questDoneIds = localStorage.getItem('userIds');
+  questDoneIds = localStorage.getItem('doneIdsSport');
+  Quests: any = questData;
+  
 
   constructor() { }
 
   ngOnInit(): void {
-    this.questArray[0] = new Quest;
-    this.questArray[1] = new Quest;
-    this.questArray[2] = new Quest;
+    this.questArray[0] = this.Quests["quests"][0];
+    this.questArray[1] = this.Quests["quests"][1];
+    this.questArray[2] = this.Quests["quests"][2];
   }
   
   addPointsAndDoneQuest(points, id) {
     let userPoints = localStorage.getItem('userPoints');
     userPoints = (parseInt(userPoints) + parseInt(points)).toString();
     localStorage.setItem('userPoints', userPoints);
-    let actualIds = localStorage.getItem('userIds');
+    let actualIds = localStorage.getItem('doneIdsSport');
     actualIds = actualIds + ',' + id;
-    localStorage.setItem('userIds', actualIds);
-    this.questDoneIds = localStorage.getItem('userIds');
+    localStorage.setItem('doneIdsSport', actualIds);
+    this.questDoneIds = localStorage.getItem('doneIdsSport');
   }
-}
-
-class Quest {
-  questPoints = '🚴 | 200 Punkte'
-  questTitel = '"Ab aufs Rad!"'
-  questText = 'Fahre heute 10km Fahrrad! '
-  questId = '0001'
-  questPointsValue = '200'
 }

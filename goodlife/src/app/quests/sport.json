@@ -1,0 +1,25 @@
+{
+    "quests": [
+    {
+        "questId": "00001",
+        "questPoints": "🚴 | 200 Punkte",
+        "questTitel": "Ab aufs Rad!",
+        "questPointsValue": "200",
+        "questText": "Fahre heute 10km Fahrrad!"
+    },
+    {
+        "questId": "00002",
+        "questPoints": "🚴 | 300 Punkte",
+        "questTitel": "Ab aufs Rad!",
+        "questPointsValue": "300",
+        "questText": "Fahre heute 15km Fahrrad!"
+    },
+    {
+        "questId": "00003",
+        "questPoints": "🚴 | 400 Punkte",
+        "questTitel": "Ab aufs Rad!",
+        "questPointsValue": "400",
+        "questText": "Fahre heute 20km Fahrrad!"
+    }
+    ]
+}

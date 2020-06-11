@@ -8,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
   userName: string;
   userPoints: string;
-  userIds: string;
+  doneIdsSport: string;
+  doneIdsbodyfeel: string;
+  doneIdsmeal: string;
+  doneIdssustainability: string;
   userNameIsSet: boolean;
 
   constructor() { }
@@ -16,7 +19,10 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.setOrSearchUsername();
     this.setOrGetPoints();
-    this.setOrGetdoneIds();
+    this.setOrGetdoneIdsSport();
+    this.setOrGetdoneIdsbodyfeel();
+    this.setOrGetdoneIdsmeal();
+    this.setOrGetdoneIdssustainability();
   }
 
   setOrSearchUsername() {
@@ -44,11 +50,35 @@ export class ProfileComponent implements OnInit {
     } 
   }
 
-  setOrGetdoneIds() {
-    this.userIds = localStorage.getItem('userIds');
-    if (this.userIds == null) {
-      localStorage.setItem('userIds', '0000');
-      this.userIds = localStorage.getItem('userIds');
+  setOrGetdoneIdsSport() {
+    this.doneIdsSport = localStorage.getItem('doneIdsSport');
+    if (this.doneIdsSport == null) {
+      localStorage.setItem('doneIdsSport', '00000');
+      this.doneIdsSport = localStorage.getItem('doneIdsSport');
+    } 
+  }
+
+  setOrGetdoneIdsbodyfeel() {
+    this.doneIdsbodyfeel = localStorage.getItem('doneIdsbodyfeel');
+    if (this.doneIdsbodyfeel == null) {
+      localStorage.setItem('doneIdsbodyfeel', '00000');
+      this.doneIdsbodyfeel = localStorage.getItem('doneIdsbodyfeel');
+    } 
+  }
+
+  setOrGetdoneIdsmeal() {
+    this.doneIdsmeal = localStorage.getItem('doneIdsmeal');
+    if (this.doneIdsmeal == null) {
+      localStorage.setItem('doneIdsmeal', '00000');
+      this.doneIdsmeal = localStorage.getItem('doneIdsmeal');
+    } 
+  }
+
+  setOrGetdoneIdssustainability() {
+    this.doneIdssustainability = localStorage.getItem('doneIdssustainability');
+    if (this.doneIdssustainability == null) {
+      localStorage.setItem('doneIdssustainability', '00000');
+      this.doneIdssustainability = localStorage.getItem('doneIdssustainability');
     } 
   }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import questData from '../quests/meal.json';
 
 @Component({
   selector: 'app-meal',
@@ -8,31 +8,23 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class MealComponent implements OnInit {
   questArray = [];
-  questDoneIds = localStorage.getItem('userIds');
+  questDoneIds = localStorage.getItem('doneIdsmeal');
+  Quests: any = questData;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.questArray[0] = new Quest;
-    this.questArray[1] = new Quest;
-    this.questArray[2] = new Quest;
+    this.questArray[0] = this.Quests["quests"][0];
+    this.questArray[1] = this.Quests["quests"][1];
+    this.questArray[2] = this.Quests["quests"][2];
   }
   addPointsAndDoneQuest(points, id) {
     let userPoints = localStorage.getItem('userPoints');
     userPoints = (parseInt(userPoints) + parseInt(points)).toString();
     localStorage.setItem('userPoints', userPoints);
-    let actualIds = localStorage.getItem('userIds');
+    let actualIds = localStorage.getItem('doneIdsmeal');
     actualIds = actualIds + ',' + id;
-    localStorage.setItem('userIds', actualIds);
-    this.questDoneIds = localStorage.getItem('userIds');
+    localStorage.setItem('doneIdsmeal', actualIds);
+    this.questDoneIds = localStorage.getItem('doneIdsmeal');
   }
 }
-
-class Quest {
-  questPoints = 'Veganer Heringsalat'
-  questTitel = ''
-  questText = ''
-  questId = '0003'
-  questPointsValue = '200'
-}
-

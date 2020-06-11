@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import questData from '../quests/bodyfeel.json';
 
 @Component({
   selector: 'app-bodyfeel',
@@ -7,29 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BodyfeelComponent implements OnInit {
   questArray = [];
-  questDoneIds = localStorage.getItem('userIds');
+  questDoneIds = localStorage.getItem('doneIdsbodyfeel');
+  Quests: any = questData;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.questArray[0] = new Quest;
-    this.questArray[1] = new Quest;
-    this.questArray[2] = new Quest;
+    this.questArray[0] = this.Quests["quests"][0];
+    this.questArray[1] = this.Quests["quests"][1];
+    this.questArray[2] = this.Quests["quests"][2];
   }
+
   addPointsAndDoneQuest(points, id) {
     let userPoints = localStorage.getItem('userPoints');
     userPoints = (parseInt(userPoints) + parseInt(points)).toString();
     localStorage.setItem('userPoints', userPoints);
-    let actualIds = localStorage.getItem('userIds');
+    let actualIds = localStorage.getItem('doneIdsbodyfeel');
     actualIds = actualIds + ',' + id;
-    localStorage.setItem('userIds', actualIds);
-    this.questDoneIds = localStorage.getItem('userIds');
+    localStorage.setItem('doneIdsbodyfeel', actualIds);
+    this.questDoneIds = localStorage.getItem('doneIdsbodyfeel');
   }
-}
-class Quest {
-  questPoints = 'Yoga'
-  questTitel = ''
-  questText = ''
-  questId = '0002'
-  questPointsValue = '200'
 }
