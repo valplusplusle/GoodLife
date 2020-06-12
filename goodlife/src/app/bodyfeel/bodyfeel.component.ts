@@ -10,6 +10,7 @@ export class BodyfeelComponent implements OnInit {
   questArray = [];
   questDoneIds = localStorage.getItem('doneIdsbodyfeel');
   Quests: any = questData;
+  taskdone = false;
 
   constructor() { }
 
@@ -27,5 +28,15 @@ export class BodyfeelComponent implements OnInit {
     actualIds = actualIds + ',' + id;
     localStorage.setItem('doneIdsbodyfeel', actualIds);
     this.questDoneIds = localStorage.getItem('doneIdsbodyfeel');
+    setTimeout(() => 
+    {
+      this.taskdone=true;
+    },
+    100);
+    setTimeout(() => 
+    {
+      this.taskdone=false;
+    },
+    5000);
   }
 }

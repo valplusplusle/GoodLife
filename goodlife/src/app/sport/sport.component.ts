@@ -10,8 +10,8 @@ export class SportComponent implements OnInit {
   questArray = [];
   questDoneIds = localStorage.getItem('doneIdsSport');
   Quests: any = questData;
+  taskdone = false;
   
-
   constructor() { }
 
   ngOnInit(): void {
@@ -28,5 +28,15 @@ export class SportComponent implements OnInit {
     actualIds = actualIds + ',' + id;
     localStorage.setItem('doneIdsSport', actualIds);
     this.questDoneIds = localStorage.getItem('doneIdsSport');
+    setTimeout(() => 
+    {
+      this.taskdone=true;
+    },
+    100);
+    setTimeout(() => 
+    {
+      this.taskdone=false;
+    },
+    5000);
   }
 }

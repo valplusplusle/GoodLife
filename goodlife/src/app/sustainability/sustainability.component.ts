@@ -10,6 +10,7 @@ export class SustainabilityComponent implements OnInit {
   questArray = [];
   questDoneIds = localStorage.getItem('doneIdssustainability');
   Quests: any = questData;
+  taskdone = false;
 
   constructor() { }
 
@@ -26,5 +27,15 @@ export class SustainabilityComponent implements OnInit {
     actualIds = actualIds + ',' + id;
     localStorage.setItem('doneIdssustainability', actualIds);
     this.questDoneIds = localStorage.getItem('doneIdssustainability');
+    setTimeout(() => 
+    {
+      this.taskdone=true;
+    },
+    100);
+    setTimeout(() => 
+    {
+      this.taskdone=false;
+    },
+    5000);
   }
 }

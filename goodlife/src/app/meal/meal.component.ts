@@ -10,6 +10,7 @@ export class MealComponent implements OnInit {
   questArray = [];
   questDoneIds = localStorage.getItem('doneIdsmeal');
   Quests: any = questData;
+  taskdone = false;
 
   constructor() { }
 
@@ -26,5 +27,15 @@ export class MealComponent implements OnInit {
     actualIds = actualIds + ',' + id;
     localStorage.setItem('doneIdsmeal', actualIds);
     this.questDoneIds = localStorage.getItem('doneIdsmeal');
+    setTimeout(() => 
+    {
+      this.taskdone=true;
+    },
+    100);
+    setTimeout(() => 
+    {
+      this.taskdone=false;
+    },
+    5000);
   }
 }
