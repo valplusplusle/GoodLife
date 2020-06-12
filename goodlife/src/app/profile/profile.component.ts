@@ -8,26 +8,51 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
   userName: string;
   userPoints: string;
+  userPointsToday: string;
+  userPointsYesterday: string;
   doneIdsSport: string;
   doneIdsbodyfeel: string;
   doneIdsmeal: string;
   doneIdssustainability: string;
   userNameIsSet: boolean;
+  today: string;
+  yyyymmdd;
 
   constructor() { }
 
   ngOnInit(): void {
     this.setOrSearchUsername();
     this.setOrGetPoints();
+    this.setOrGetPointsYesterday();
+    this.setOrGetPointsToday();
     this.setOrGetdoneIdsSport();
     this.setOrGetdoneIdsbodyfeel();
     this.setOrGetdoneIdsmeal();
     this.setOrGetdoneIdssustainability();
+    this.getDate();
+  }
+
+  getDate() {
+    this.today = localStorage.getItem('date');
+    if (this.today == null || this.today == "null") {
+      this.today = (new Date().toISOString().substring(0, 10)).toString();
+      console.log(this.today)
+      localStorage.setItem('date', this.today);
+    } else {
+      if (this.today == (new Date().toISOString().substring(0, 10)).toString()) {
+        console.log("no new quests set")
+      } else {
+        localStorage.setItem('oldDate', this.today);
+        localStorage.setItem('date', (new Date().toISOString().substring(0, 10)).toString());
+        this.deleteAllDoneIds();
+        this.todayPointsToYesterday();
+      }
+    }
   }
 
   setOrSearchUsername() {
     this.userName = localStorage.getItem('UserName');
-    if (this.userName == null || this.userName == "null") {
+    if (this.userName == null || this.userName == "null" || this.userName == "Set Your Username") {
       localStorage.setItem('UserName', 'Set Your Username');
       this.userName = localStorage.getItem('UserName');
       this.userNameIsSet = false;
@@ -48,6 +73,27 @@ export class ProfileComponent implements OnInit {
       localStorage.setItem('userPoints', '0');
       this.userPoints = localStorage.getItem('userPoints');
     } 
+  }
+
+  setOrGetPointsYesterday() {
+    this.userPointsYesterday = localStorage.getItem('userPointsYesterday');
+    if (this.userPointsYesterday == null) {
+      localStorage.setItem('userPointsYesterday', '0');
+      this.userPointsYesterday = localStorage.getItem('userPointsYesterday');
+    } 
+  }
+
+  setOrGetPointsToday() {
+    this.userPointsToday = localStorage.getItem('userPointsToday');
+    if (this.userPointsToday == null) {
+      localStorage.setItem('userPointsToday', '0');
+      this.userPointsToday = localStorage.getItem('userPointsToday');
+    } 
+  }
+
+  todayPointsToYesterday() {
+    localStorage.setItem('userPointsYesterday', this.userPointsToday);
+    localStorage.setItem('userPointsToday', '0');
   }
 
   setOrGetdoneIdsSport() {
@@ -80,6 +126,13 @@ export class ProfileComponent implements OnInit {
       localStorage.setItem('doneIdssustainability', '00000');
       this.doneIdssustainability = localStorage.getItem('doneIdssustainability');
     } 
+  }
+
+  deleteAllDoneIds() {
+    localStorage.setItem('doneIdssustainability', '00000');
+    localStorage.setItem('doneIdsmeal', '00000');
+    localStorage.setItem('doneIdsbodyfeel', '00000');
+    localStorage.setItem('doneIdsSport', '00000');
   }
 
   resetUserName() {

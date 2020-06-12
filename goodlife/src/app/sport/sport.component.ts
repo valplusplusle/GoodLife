@@ -24,6 +24,11 @@ export class SportComponent implements OnInit {
     let userPoints = localStorage.getItem('userPoints');
     userPoints = (parseInt(userPoints) + parseInt(points)).toString();
     localStorage.setItem('userPoints', userPoints);
+
+    let userPointsToday = localStorage.getItem('userPointsToday');
+    userPointsToday = (parseInt(userPointsToday) + parseInt(points)).toString();
+    localStorage.setItem('userPointsToday', userPointsToday);
+
     let actualIds = localStorage.getItem('doneIdsSport');
     actualIds = actualIds + ',' + id;
     localStorage.setItem('doneIdsSport', actualIds);
@@ -37,6 +42,6 @@ export class SportComponent implements OnInit {
     {
       this.taskdone=false;
     },
-    5000);
+    3000);
   }
 }
