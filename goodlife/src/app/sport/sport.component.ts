@@ -11,6 +11,7 @@ export class SportComponent implements OnInit {
   questDoneIds = localStorage.getItem('doneIdsSport');
   Quests: any = questData;
   taskdone = false;
+  noMoreQuest = false;
   
   constructor() { }
 
@@ -18,6 +19,7 @@ export class SportComponent implements OnInit {
     this.questArray[0] = this.Quests["quests"][0];
     this.questArray[1] = this.Quests["quests"][1];
     this.questArray[2] = this.Quests["quests"][2];
+    this.testIfAllQuestsDone();
   }
   
   addPointsAndDoneQuest(points, id) {
@@ -43,5 +45,15 @@ export class SportComponent implements OnInit {
       this.taskdone=false;
     },
     3000);
+    this.testIfAllQuestsDone();
   }
+
+  testIfAllQuestsDone() {
+    console.log(this.questDoneIds)
+    if(this.questDoneIds.length == 23) {
+      this.noMoreQuest = true;
+    }
+  }
+
 }
+
