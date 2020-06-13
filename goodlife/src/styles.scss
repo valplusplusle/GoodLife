@@ -1,2 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+.alert-primary {
+    background-color: #00A1A1 !important;
+    color: white;
+}
+
+.btn {
+    background-color: #00A1A1 !important;
+    color: white !important;
+    border-color: #00A1A1 !important;
+}
