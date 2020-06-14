@@ -16,9 +16,12 @@ export class SustainabilityComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.questArray[0] = this.Quests["quests"][0];
-    this.questArray[1] = this.Quests["quests"][1];
-    this.questArray[2] = this.Quests["quests"][2];
+    let numbers = localStorage.getItem('setNewQuestsSustainability');
+    let convertedNumbers = numbers.split(",")
+    console.log(convertedNumbers)
+    this.questArray[0] = this.Quests["quests"][convertedNumbers[0]];
+    this.questArray[1] = this.Quests["quests"][convertedNumbers[1]];
+    this.questArray[2] = this.Quests["quests"][convertedNumbers[2]];
     this.testIfAllQuestsDone();
   }
   addPointsAndDoneQuest(points, id) {

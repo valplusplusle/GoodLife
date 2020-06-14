@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import questDataSport from '../quests/sport.json';
+import questDataMeal from '../quests/meal.json';
+import questDataBody from '../quests/bodyfeel.json';
+import questDataSustainability from '../quests/sustainability.json';
 
 @Component({
   selector: 'app-profile',
@@ -6,6 +10,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  QuestsSport: any = questDataSport;
+  QuestsMeal: any = questDataMeal;
+  QuestsBody: any = questDataBody;
+  QuestsSustainability: any = questDataSustainability;
   userName: string;
   userPoints: string;
   userPointsToday: string;
@@ -23,6 +31,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.setOrSearchUsername();
     this.setOrGetPoints();
+    this.setQuestsIfNotAlready();
     this.setOrGetPointsYesterday();
     this.setOrGetPointsToday();
     this.setOrGetdoneIdsSport();
@@ -36,7 +45,6 @@ export class ProfileComponent implements OnInit {
     this.today = localStorage.getItem('date');
     if (this.today == null || this.today == "null") {
       this.today = (new Date().toISOString().substring(0, 10)).toString();
-      console.log(this.today)
       localStorage.setItem('date', this.today);
     } else {
       if (this.today == (new Date().toISOString().substring(0, 10)).toString()) {
@@ -46,8 +54,38 @@ export class ProfileComponent implements OnInit {
         localStorage.setItem('date', (new Date().toISOString().substring(0, 10)).toString());
         this.deleteAllDoneIds();
         this.todayPointsToYesterday();
+        this.setNewQuests();
       }
     }
+  }
+
+  setQuestsIfNotAlready() {
+    let questChecker = localStorage.getItem('setNewQuestsSport');
+    if (questChecker == null || questChecker == "null") {
+      this.setNewQuests();
+    }
+  }
+
+  setNewQuests() {
+    let sportQuests = this.QuestsSport["quests"].length;
+    let sportQuestsNumbers = []
+    for (var i=0; i< sportQuests; i++) { sportQuestsNumbers[i] = Math.floor(Math.random() * ((sportQuests-1) - 0 + 1)) + 0; }
+    localStorage.setItem('setNewQuestsSport', sportQuestsNumbers.toString())
+
+    let mealQuests = this.QuestsMeal["quests"].length;
+    let mealQuestsNumbers = []
+    for (var i=0; i< mealQuests; i++) { mealQuestsNumbers[i] = Math.floor(Math.random() * ((mealQuests-1) - 0 + 1)) + 0; }
+    localStorage.setItem('setNewQuestsMeal', mealQuestsNumbers.toString())
+
+    let bodyQuests = this.QuestsBody["quests"].length;
+    let bodyQuestsNumbers = []
+    for (var i=0; i< bodyQuests; i++) { bodyQuestsNumbers[i] = Math.floor(Math.random() * ((bodyQuests-1) - 0 + 1)) + 0; }
+    localStorage.setItem('setNewQuestsBody', bodyQuestsNumbers.toString())
+
+    let sustainabilityQuests = this.QuestsSustainability["quests"].length;
+    let sustainabilityQuestsNumbers = []
+    for (var i=0; i< sustainabilityQuests; i++) { sustainabilityQuestsNumbers[i] = Math.floor(Math.random() * ((sustainabilityQuests-1) - 0 + 1)) + 0; }
+    localStorage.setItem('setNewQuestsSustainability', sustainabilityQuestsNumbers.toString())
   }
 
   setOrSearchUsername() {
