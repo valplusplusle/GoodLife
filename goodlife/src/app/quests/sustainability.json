@@ -2,24 +2,73 @@
     "quests": [
     {
         "questId": "00001",
-        "questPoints": "N | 200 Punkte",
-        "questTitel": "Trinke nur Wasser",
-        "questPointsValue": "200",
-        "questText": ""
+        "questPoints": "🥩 | 20 Punkte",
+        "questTitel": "Lebe heute Vegan",
+        "questPointsValue": "20",
+        "questText": "Und informiere dich über die Umweltbelastung durch Massentierhaltung."
     },
     {
         "questId": "00002",
-        "questPoints": "N | 200 Punkte",
-        "questTitel": "Trinke nur Wasser",
-        "questPointsValue": "200",
-        "questText": ""
+        "questPoints": "🐖 | 150 Punkte",
+        "questTitel": "Dominion",
+        "questPointsValue": "150",
+        "questText": "Schaue heute eine Doku über Tierhaltung/Massentierhaltung z.B. Dominion auf YouTube."
     },
     {
         "questId": "00003",
-        "questPoints": "N | 200 Punkte",
-        "questTitel": "Trinke nur Wasser",
-        "questPointsValue": "200",
-        "questText": ""
+        "questPoints": "🌱 | 10 Punkte",
+        "questTitel": "Waschmittel?",
+        "questPointsValue": "10",
+        "questText": "Mache dir gedanken über dein Waschmittel. Ist es Tierversuchsfrei? Fairtrade? Nachhaltige Verpackung? Wenn nicht ändere etwas."
+    },
+    {
+        "questId": "00004",
+        "questPoints": "🌱 | 50 Punkte",
+        "questTitel": "Pflanze einen Baum",
+        "questPointsValue": "50",
+        "questText": "Wenn du diese Möglichkeit nicht hast gibt es alternativen im Internet wie 'Treedom'"
+    },
+    {
+        "questId": "00005",
+        "questPoints": "🕯 | 100 Punkte",
+        "questTitel": "Superchallange!",
+        "questPointsValue": "100",
+        "questText": "Verzichte heute abend zu deiner 'PrimeTime' 3h komplett auf Strom! Ich hoffe du hast Kerzen daheim."
+    },
+    {
+        "questId": "00006",
+        "questPoints": "🧴 | 10 Punkte",
+        "questTitel": "Weg mit dem Plastik!",
+        "questPointsValue": "10",
+        "questText": "Kaufe heute keine Produkte mit Plasikverpackung und mache dir deinen Plastikkonsum bewusst."
+    },
+    {
+        "questId": "00007",
+        "questPoints": "🚌 | 30 Punkte",
+        "questTitel": "Öffi's!",
+        "questPointsValue": "30",
+        "questText": "Verzichte heute auf ein Auto und nutze für all deine Wege öffentliche Verkehrsmittel oder das Fahrrad."
+    },
+    {
+        "questId": "00008",
+        "questPoints": "💡 | 30 Punkte",
+        "questTitel": "Energiesparer!",
+        "questPointsValue": "30",
+        "questText": "Schalte alle Elektrogeräte aus, welche du nicht benutzt. Standby ist kein Ausschalten! Weg vom Strom damit."
+    },
+    {
+        "questId": "00009",
+        "questPoints": "📱 | 5 Punkte",
+        "questTitel": "Smartphone!",
+        "questPointsValue": "5",
+        "questText": "Wie nachhaltig ist dein Smartphoneverhalten? Alle zwei Jahre ein neues? Mach dich schlau über Alternativen wie das Fairphone."
+    },
+    {
+        "questId": "00010",
+        "questPoints": "📱 | 30 Punkte",
+        "questTitel": "Smartphone!",
+        "questPointsValue": "30",
+        "questText": "Versuche dein Smartphone mit Ökostrom oder selbstproduzierten Strom zu laden. Eine Solarpowerbank schafft zwar Umweltbelastung, zahlt sich aber aus."
     }
     ]
 }

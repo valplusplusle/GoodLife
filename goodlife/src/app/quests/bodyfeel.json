@@ -2,24 +2,73 @@
     "quests": [
     {
         "questId": "00001",
-        "questPoints": "Y | 200 Punkte",
-        "questTitel": "Yoga",
-        "questPointsValue": "200",
-        "questText": ""
+        "questPoints": "🤸‍♂️🤸‍♀️ | 20 Punkte",
+        "questTitel": "Ratschlag",
+        "questPointsValue": "20",
+        "questText": "Übe dich daran ein Rad zu schlagen."
     },
     {
         "questId": "00002",
-        "questPoints": "Y | 200 Punkte",
-        "questTitel": "Yoga",
-        "questPointsValue": "200",
-        "questText": ""
+        "questPoints": "🤸‍♂️🤸‍♀️ | 20 Punkte",
+        "questTitel": "Handstand Training!",
+        "questPointsValue": "20",
+        "questText": "Schaffst du einen Handstand? Wenn ja wie lange?"
     },
     {
         "questId": "00003",
-        "questPoints": "Y | 200 Punkte",
-        "questTitel": "Yoga",
-        "questPointsValue": "200",
-        "questText": ""
+        "questPoints": "🧘‍♂️🧘‍♀️ | 30 Punkte",
+        "questTitel": "Meditation",
+        "questPointsValue": "30",
+        "questText": "Setzte dich 30 Minuten auf den Boden in eine bequeme Position, schalte alle Störquellen ab und versuche nur deine eigene Stimme wahrzunehmen."
+    },
+    {
+        "questId": "00004",
+        "questPoints": "📱 | 40 Punkte",
+        "questTitel": "Ruhe!",
+        "questPointsValue": "40",
+        "questText": "1h Handy aus! Verzichte auch auf alle ähnliche Erreichbarkeitsgeräte."
+    },
+    {
+        "questId": "00005",
+        "questPoints": "🤸‍♂️🤸‍♀️ | 5 Punkte",
+        "questTitel": "Wie du kommst da nicht hin?!",
+        "questPointsValue": "5",
+        "questText": "Versuche deine Füße zu berühren so weit du kannst."
+    },
+    {
+        "questId": "00006",
+        "questPoints": "🕯 | 100 Punkte",
+        "questTitel": "Superchallange!",
+        "questPointsValue": "100",
+        "questText": "Verzichte heute abend zu deiner 'PrimeTime' 3h komplett auf Strom! Ich hoffe du hast Kerzen daheim."
+    },
+    {
+        "questId": "00007",
+        "questPoints": "📖 | 5 Punkte",
+        "questTitel": "Bücherwurm!",
+        "questPointsValue": "5",
+        "questText": "Lese Heute ohne Ablenkung ein Kapitel."
+    },
+    {
+        "questId": "00008",
+        "questPoints": "✒ | 15 Punkte",
+        "questTitel": "Briefzeit",
+        "questPointsValue": "15",
+        "questText": "Schreibe einen Brief an jemanden der sich sehr darüber freuen wird."
+    },
+    {
+        "questId": "00009",
+        "questPoints": "🚿 | 15 Punkte",
+        "questTitel": "Schonmal was von Kneipp gehört?",
+        "questPointsValue": "15",
+        "questText": "Heute wird Kalt geduscht! Nicht vergessen Herzfern beginnen."
+    },
+    {
+        "questId": "00010",
+        "questPoints": "✒ | 30 Punkte",
+        "questTitel": "Wofür bist du Dankbar?",
+        "questPointsValue": "30",
+        "questText": "Schreibe eine Liste mit dingen für die du Dankbar bist. Du wirst dich wundern wie lange sie wird."
     }
     ]
 }

@@ -2,24 +2,73 @@
     "quests": [
     {
         "questId": "00001",
-        "questPoints": "🚴 | 200 Punkte",
+        "questPoints": "🚴‍♀️🚴‍♂️ | 20 Punkte",
         "questTitel": "Ab aufs Rad!",
-        "questPointsValue": "200",
+        "questPointsValue": "20",
         "questText": "Fahre heute 10km Fahrrad!"
     },
     {
         "questId": "00002",
-        "questPoints": "🚴 | 300 Punkte",
+        "questPoints": "🚴‍♀️🚴‍♂️ | 30 Punkte",
         "questTitel": "Ab aufs Rad!",
-        "questPointsValue": "300",
+        "questPointsValue": "30",
         "questText": "Fahre heute 15km Fahrrad!"
     },
     {
         "questId": "00003",
-        "questPoints": "🚴 | 400 Punkte",
+        "questPoints": "🚴‍♀️🚴‍♂️ | 40 Punkte",
         "questTitel": "Ab aufs Rad!",
-        "questPointsValue": "400",
+        "questPointsValue": "40",
         "questText": "Fahre heute 20km Fahrrad!"
+    },
+    {
+        "questId": "00004",
+        "questPoints": "🏃‍♀️🏃‍♂️ | 10 Punkte",
+        "questTitel": "Joggen!",
+        "questPointsValue": "10",
+        "questText": "Motiviere dich heute Joggen zu gehen für 30min!"
+    },
+    {
+        "questId": "00005",
+        "questPoints": "🏃‍♀️🏃‍♂️ | 20 Punkte",
+        "questTitel": "Joggen!",
+        "questPointsValue": "20",
+        "questText": "Motiviere dich heute Joggen zu gehen für 60min!"
+    },
+    {
+        "questId": "00006",
+        "questPoints": "⛹️‍♂️⛹ | 30 Punkte",
+        "questTitel": "Ballsport!",
+        "questPointsValue": "30",
+        "questText": "Gehe heute einer beliebigen Ballsportart nach!"
+    },
+    {
+        "questId": "00007",
+        "questPoints": "🏋️‍♂️🏋️‍♀️ | 5 Punkte",
+        "questTitel": "Squads!",
+        "questPointsValue": "5",
+        "questText": "Mache 10 Squats!"
+    },
+    {
+        "questId": "00008",
+        "questPoints": "🏋️‍♂️🏋️‍♀️ | 10 Punkte",
+        "questTitel": "Liegestütze!",
+        "questPointsValue": "10",
+        "questText": "Mache 10 Liegestütze!"
+    },
+    {
+        "questId": "00009",
+        "questPoints": "🏋️‍♂️🏋️‍♀️ | 5 Punkte",
+        "questTitel": "Sit Ups!",
+        "questPointsValue": "5",
+        "questText": "Mache 20 Sit Ups!"
+    },
+    {
+        "questId": "00010",
+        "questPoints": "🏋️‍♂️🏋️‍♀️ | 50 Punkte",
+        "questTitel": "Workout Day!",
+        "questPointsValue": "50",
+        "questText": "Mache ein beliebiges Workout auf Youtube findest du einige davon!"
     }
     ]
 }

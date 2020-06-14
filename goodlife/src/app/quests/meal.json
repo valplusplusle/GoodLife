@@ -2,24 +2,24 @@
     "quests": [
     {
         "questId": "00001",
-        "questPoints": "M | 200 Punkte",
-        "questTitel": "Rezept XY",
-        "questPointsValue": "200",
-        "questText": ""
+        "questPoints": "🍎 | 5 Punkte",
+        "questTitel": "Apple a day ...",
+        "questPointsValue": "5",
+        "questText": "Esse heute einen Apfel oder eine Alternative bei Unverträglichkeit."
     },
     {
         "questId": "00002",
-        "questPoints": "M | 300 Punkte",
-        "questTitel": "Rezept XY",
-        "questPointsValue": "300",
-        "questText": ""
+        "questPoints": "🥑 | 10 Punkte",
+        "questTitel": "Avocado",
+        "questPointsValue": "10",
+        "questText": "Kaufe dir heute eine Avocadoo und iss ein Avocadoobrot. Wähle beim Kauf weise und bedenke welchen Weg die Avocadoo für dich aufnehmen musste."
     },
     {
         "questId": "00003",
-        "questPoints": "M | 400 Punkte",
-        "questTitel": "Rezept XY",
-        "questPointsValue": "400",
-        "questText": ""
+        "questPoints": "🍞 | 40 Punkte",
+        "questTitel": "Backe dein eigenes Brot",
+        "questPointsValue": "40",
+        "questText": "500 g Mehl, 300ml Wasser, 9g Salz, 30g Hefe"
     }
     ]
 }
