@@ -69,22 +69,46 @@ export class ProfileComponent implements OnInit {
   setNewQuests() {
     let sportQuests = this.QuestsSport["quests"].length;
     let sportQuestsNumbers = []
-    for (var i=0; i< sportQuests; i++) { sportQuestsNumbers[i] = Math.floor(Math.random() * ((sportQuests-1) - 0 + 1)) + 0; }
+    for (var i=0; i< 3; i++) {
+       var number = Math.floor(Math.random() * ((sportQuests-1) - 0 + 1)) + 0;
+       while (sportQuestsNumbers.includes(number)) {
+        number = Math.floor(Math.random() * ((sportQuests-1) - 0 + 1)) + 0;
+       }
+       sportQuestsNumbers[i] = number;
+    }
     localStorage.setItem('setNewQuestsSport', sportQuestsNumbers.toString())
 
     let mealQuests = this.QuestsMeal["quests"].length;
     let mealQuestsNumbers = []
-    for (var i=0; i< mealQuests; i++) { mealQuestsNumbers[i] = Math.floor(Math.random() * ((mealQuests-1) - 0 + 1)) + 0; }
+    for (var i=0; i< 3; i++) { 
+      var number = Math.floor(Math.random() * ((mealQuests-1) - 0 + 1)) + 0;
+      while (mealQuestsNumbers.includes(number)) {
+       number = Math.floor(Math.random() * ((mealQuests-1) - 0 + 1)) + 0;
+      }
+      mealQuestsNumbers[i] = number;
+    }
     localStorage.setItem('setNewQuestsMeal', mealQuestsNumbers.toString())
 
     let bodyQuests = this.QuestsBody["quests"].length;
     let bodyQuestsNumbers = []
-    for (var i=0; i< bodyQuests; i++) { bodyQuestsNumbers[i] = Math.floor(Math.random() * ((bodyQuests-1) - 0 + 1)) + 0; }
+    for (var i=0; i< 3; i++) { 
+      var number = Math.floor(Math.random() * ((bodyQuests-1) - 0 + 1)) + 0;
+      while (bodyQuestsNumbers.includes(number)) {
+       number = Math.floor(Math.random() * ((bodyQuests-1) - 0 + 1)) + 0;
+      }
+      bodyQuestsNumbers[i] = number;
+    }
     localStorage.setItem('setNewQuestsBody', bodyQuestsNumbers.toString())
 
     let sustainabilityQuests = this.QuestsSustainability["quests"].length;
     let sustainabilityQuestsNumbers = []
-    for (var i=0; i< sustainabilityQuests; i++) { sustainabilityQuestsNumbers[i] = Math.floor(Math.random() * ((sustainabilityQuests-1) - 0 + 1)) + 0; }
+    for (var i=0; i< 3; i++) { 
+      var number = Math.floor(Math.random() * ((sustainabilityQuests-1) - 0 + 1)) + 0;
+      while (sustainabilityQuestsNumbers.includes(number)) {
+       number = Math.floor(Math.random() * ((sustainabilityQuests-1) - 0 + 1)) + 0;
+      }
+      sustainabilityQuestsNumbers[i] = number;
+    }
     localStorage.setItem('setNewQuestsSustainability', sustainabilityQuestsNumbers.toString())
   }
 
