@@ -2,20 +2,18 @@
 <div class="toolbar" role="banner">
   <span class="btn whiteFont"><b>GoodLife</b></span>
   <div class="spacer whiteFont"></div>
-  <span class="btn whiteFont menuEntrySpace" (click)="pageSwitch(1)">Sport</span>
-  <span class="btn whiteFont menuEntrySpace" (click)="pageSwitch(2)">Körper</span>
-  <span class="btn whiteFont menuEntrySpace" (click)="pageSwitch(3)">Essen</span>
-  <span class="btn whiteFont menuEntrySpace" (click)="pageSwitch(4)">Welt</span>
+  <span class="btn whiteFont menuEntrySpace" (click)="pageSwitch(1)">Täglich</span>
+  <span class="btn whiteFont menuEntrySpace" (click)="pageSwitch(4)">Wöchentlich</span>
+  <span class="btn whiteFont menuEntrySpace" (click)="pageSwitch(2)">Monatlich</span>
+  
   <i class="fa fa-user userIcon" (click)="pageSwitch(0)"></i>
 </div>
 
 <div class="content" role="main">
   <app-profile *ngIf="actualPage == 0"></app-profile>
-  <app-sport *ngIf="actualPage == 1"></app-sport>
-  <app-bodyfeel *ngIf="actualPage == 2"></app-bodyfeel>
-  <app-meal *ngIf="actualPage == 3"></app-meal>
-  <app-sustainability *ngIf="actualPage == 4"></app-sustainability>
-
+  <app-daily *ngIf="actualPage == 1"></app-daily>
+  <app-weekly *ngIf="actualPage == 4"></app-weekly>
+  <app-monthly *ngIf="actualPage == 2"></app-monthly>
 </div>
 
 <router-outlet></router-outlet>

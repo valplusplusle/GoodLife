@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import questData from '../quests/meal.json';
+import questData from '../quests/sustainability.json';
 
 @Component({
-  selector: 'app-meal',
-  templateUrl: './meal.component.html',
-  styleUrls: ['./meal.component.scss']
+  selector: 'app-weekly',
+  templateUrl: './weekly.component.html',
+  styleUrls: ['./weekly.component.scss']
 })
-export class MealComponent implements OnInit {
+export class WeeklyComponent implements OnInit {
   questArray = [];
-  questDoneIds = localStorage.getItem('doneIdsmeal');
+  questDoneIds = localStorage.getItem('doneIdssustainability');
   Quests: any = questData;
   taskdone = false;
   noMoreQuest = false;
@@ -16,7 +16,7 @@ export class MealComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    let numbers = localStorage.getItem('setNewQuestsMeal');
+    let numbers = localStorage.getItem('setNewQuestsSustainability');
     let convertedNumbers = numbers.split(",")
     console.log(convertedNumbers)
     this.questArray[0] = this.Quests["quests"][convertedNumbers[0]];
@@ -33,10 +33,10 @@ export class MealComponent implements OnInit {
     userPointsToday = (parseInt(userPointsToday) + parseInt(points)).toString();
     localStorage.setItem('userPointsToday', userPointsToday);
 
-    let actualIds = localStorage.getItem('doneIdsmeal');
+    let actualIds = localStorage.getItem('doneIdssustainability');
     actualIds = actualIds + ',' + id;
-    localStorage.setItem('doneIdsmeal', actualIds);
-    this.questDoneIds = localStorage.getItem('doneIdsmeal');
+    localStorage.setItem('doneIdssustainability', actualIds);
+    this.questDoneIds = localStorage.getItem('doneIdssustainability');
     setTimeout(() => 
     {
       this.taskdone=true;

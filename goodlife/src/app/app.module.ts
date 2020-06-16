@@ -3,20 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MealComponent } from './meal/meal.component';
-import { SportComponent } from './sport/sport.component';
 import { ProfileComponent } from './profile/profile.component';
-import { SustainabilityComponent } from './sustainability/sustainability.component';
-import { BodyfeelComponent } from './bodyfeel/bodyfeel.component';
+import { DailyComponent } from './daily/daily.component';
+import { WeeklyComponent } from './weekly/weekly.component';
+import { MonthlyComponent } from './monthly/monthly.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MealComponent,
-    SportComponent,
     ProfileComponent,
-    SustainabilityComponent,
-    BodyfeelComponent
+    DailyComponent,
+    WeeklyComponent,
+    MonthlyComponent
   ],
   imports: [
     BrowserModule,

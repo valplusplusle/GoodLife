@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SportComponent } from './sport.component';
+import { WeeklyComponent } from './weekly.component';
 
-describe('SportComponent', () => {
-  let component: SportComponent;
-  let fixture: ComponentFixture<SportComponent>;
+describe('WeeklyComponent', () => {
+  let component: WeeklyComponent;
+  let fixture: ComponentFixture<WeeklyComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SportComponent ]
+      declarations: [ WeeklyComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SportComponent);
+    fixture = TestBed.createComponent(WeeklyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

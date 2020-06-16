@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import questData from '../quests/bodyfeel.json';
+import questData from '../quests/sport.json';
 
 @Component({
-  selector: 'app-bodyfeel',
-  templateUrl: './bodyfeel.component.html',
-  styleUrls: ['./bodyfeel.component.scss']
+  selector: 'app-daily',
+  templateUrl: './daily.component.html',
+  styleUrls: ['./daily.component.scss']
 })
-export class BodyfeelComponent implements OnInit {
+export class DailyComponent implements OnInit {
   questArray = [];
-  questDoneIds = localStorage.getItem('doneIdsbodyfeel');
+  questDoneIds = localStorage.getItem('doneIdsSport');
   Quests: any = questData;
   taskdone = false;
   noMoreQuest = false;
-
+  
   constructor() { }
 
   ngOnInit(): void {
-    let numbers = localStorage.getItem('setNewQuestsBody');
+    let numbers = localStorage.getItem('setNewQuestsSport');
     let convertedNumbers = numbers.split(",")
     console.log(convertedNumbers)
     this.questArray[0] = this.Quests["quests"][convertedNumbers[0]];
@@ -24,7 +24,7 @@ export class BodyfeelComponent implements OnInit {
     this.questArray[2] = this.Quests["quests"][convertedNumbers[2]];
     this.testIfAllQuestsDone();
   }
-
+  
   addPointsAndDoneQuest(points, id) {
     let userPoints = localStorage.getItem('userPoints');
     userPoints = (parseInt(userPoints) + parseInt(points)).toString();
@@ -34,10 +34,10 @@ export class BodyfeelComponent implements OnInit {
     userPointsToday = (parseInt(userPointsToday) + parseInt(points)).toString();
     localStorage.setItem('userPointsToday', userPointsToday);
 
-    let actualIds = localStorage.getItem('doneIdsbodyfeel');
+    let actualIds = localStorage.getItem('doneIdsSport');
     actualIds = actualIds + ',' + id;
-    localStorage.setItem('doneIdsbodyfeel', actualIds);
-    this.questDoneIds = localStorage.getItem('doneIdsbodyfeel');
+    localStorage.setItem('doneIdsSport', actualIds);
+    this.questDoneIds = localStorage.getItem('doneIdsSport');
     setTimeout(() => 
     {
       this.taskdone=true;

@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import questData from '../quests/sport.json';
+import questData from '../quests/meal.json';
 
 @Component({
-  selector: 'app-sport',
-  templateUrl: './sport.component.html',
-  styleUrls: ['./sport.component.scss']
+  selector: 'app-monthly',
+  templateUrl: './monthly.component.html',
+  styleUrls: ['./monthly.component.scss']
 })
-export class SportComponent implements OnInit {
+export class MonthlyComponent implements OnInit {
   questArray = [];
-  questDoneIds = localStorage.getItem('doneIdsSport');
+  questDoneIds = localStorage.getItem('doneIdsmeal');
   Quests: any = questData;
   taskdone = false;
   noMoreQuest = false;
-  
+
   constructor() { }
 
   ngOnInit(): void {
-    let numbers = localStorage.getItem('setNewQuestsSport');
+    let numbers = localStorage.getItem('setNewQuestsMeal');
     let convertedNumbers = numbers.split(",")
     console.log(convertedNumbers)
     this.questArray[0] = this.Quests["quests"][convertedNumbers[0]];
@@ -24,7 +24,6 @@ export class SportComponent implements OnInit {
     this.questArray[2] = this.Quests["quests"][convertedNumbers[2]];
     this.testIfAllQuestsDone();
   }
-  
   addPointsAndDoneQuest(points, id) {
     let userPoints = localStorage.getItem('userPoints');
     userPoints = (parseInt(userPoints) + parseInt(points)).toString();
@@ -34,10 +33,10 @@ export class SportComponent implements OnInit {
     userPointsToday = (parseInt(userPointsToday) + parseInt(points)).toString();
     localStorage.setItem('userPointsToday', userPointsToday);
 
-    let actualIds = localStorage.getItem('doneIdsSport');
+    let actualIds = localStorage.getItem('doneIdsmeal');
     actualIds = actualIds + ',' + id;
-    localStorage.setItem('doneIdsSport', actualIds);
-    this.questDoneIds = localStorage.getItem('doneIdsSport');
+    localStorage.setItem('doneIdsmeal', actualIds);
+    this.questDoneIds = localStorage.getItem('doneIdsmeal');
     setTimeout(() => 
     {
       this.taskdone=true;
@@ -57,6 +56,4 @@ export class SportComponent implements OnInit {
       this.noMoreQuest = true;
     }
   }
-
 }
-
