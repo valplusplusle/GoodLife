@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import questData from '../quests/sport.json';
+import questDataDaily from '../quests/daily.json';
 
 @Component({
   selector: 'app-daily',
@@ -8,15 +8,15 @@ import questData from '../quests/sport.json';
 })
 export class DailyComponent implements OnInit {
   questArray = [];
-  questDoneIds = localStorage.getItem('doneIdsSport');
-  Quests: any = questData;
+  questDoneIds = localStorage.getItem('doneIdsDaily');
+  Quests: any = questDataDaily;
   taskdone = false;
   noMoreQuest = false;
   
   constructor() { }
 
   ngOnInit(): void {
-    let numbers = localStorage.getItem('setNewQuestsSport');
+    let numbers = localStorage.getItem('setNewDailyQuests');
     let convertedNumbers = numbers.split(",")
     console.log(convertedNumbers)
     this.questArray[0] = this.Quests["quests"][convertedNumbers[0]];
@@ -34,10 +34,10 @@ export class DailyComponent implements OnInit {
     userPointsToday = (parseInt(userPointsToday) + parseInt(points)).toString();
     localStorage.setItem('userPointsToday', userPointsToday);
 
-    let actualIds = localStorage.getItem('doneIdsSport');
+    let actualIds = localStorage.getItem('doneIdsDaily');
     actualIds = actualIds + ',' + id;
-    localStorage.setItem('doneIdsSport', actualIds);
-    this.questDoneIds = localStorage.getItem('doneIdsSport');
+    localStorage.setItem('doneIdsDaily', actualIds);
+    this.questDoneIds = localStorage.getItem('doneIdsDaily');
     setTimeout(() => 
     {
       this.taskdone=true;

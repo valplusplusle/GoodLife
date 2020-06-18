@@ -1,0 +1,25 @@
+{
+    "quests": [
+    {
+        "questId": "00001",
+        "questPoints": "🚴‍♀️🚴‍♂️ | 20 Punkte",
+        "questTitel": "Ab aufs Rad diesen Monat!",
+        "questPointsValue": "20",
+        "questText": "Fahre heute Fahrrad!"
+    },
+    {
+        "questId": "00002",
+        "questPoints": "🏋️‍♂️🏋️‍♀️ | 5 Punkte",
+        "questTitel": "Squads diesen Monat!",
+        "questPointsValue": "5",
+        "questText": "Mache 10 Squats!"
+    },
+    {
+        "questId": "00003",
+        "questPoints": "🏋️‍♂️🏋️‍♀️ | 5 Punkte",
+        "questTitel": "Liegestütz diesen Monat!",
+        "questPointsValue": "5",
+        "questText": "Mache 10 Liegestütze!"
+    }
+    ]
+}

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import questDataSport from '../quests/sport.json';
-import questDataMeal from '../quests/meal.json';
-import questDataBody from '../quests/bodyfeel.json';
-import questDataSustainability from '../quests/sustainability.json';
+import questDataDaily from '../quests/daily.json';
+import questDataMonthly from '../quests/monthly.json';
+import questDataWeekly from '../quests/weekly.json';
 
 @Component({
   selector: 'app-profile',
@@ -10,18 +9,19 @@ import questDataSustainability from '../quests/sustainability.json';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  QuestsSport: any = questDataSport;
-  QuestsMeal: any = questDataMeal;
-  QuestsBody: any = questDataBody;
-  QuestsSustainability: any = questDataSustainability;
+  QuestsDaily: any = questDataDaily;
+  QuestsWeekly: any = questDataWeekly;
+  QuestsMonthly: any = questDataMonthly;
+ 
   userName: string;
   userPoints: string;
   userPointsToday: string;
   userPointsYesterday: string;
-  doneIdsSport: string;
-  doneIdsbodyfeel: string;
-  doneIdsmeal: string;
-  doneIdssustainability: string;
+
+  doneIdsDaily: string;
+  doneIdsWeekly: string;
+  doneIdsMonthly: string;
+  
   userNameIsSet: boolean;
   today: string;
   yyyymmdd;
@@ -34,11 +34,12 @@ export class ProfileComponent implements OnInit {
     this.setQuestsIfNotAlready();
     this.setOrGetPointsYesterday();
     this.setOrGetPointsToday();
-    this.setOrGetdoneIdsSport();
-    this.setOrGetdoneIdsbodyfeel();
-    this.setOrGetdoneIdsmeal();
-    this.setOrGetdoneIdssustainability();
+    this.setOrGetDoneIds(this.doneIdsDaily, 'doneIdsDaily');
+    this.setOrGetDoneIds(this.doneIdsWeekly, 'doneIdsWeekly');
+    this.setOrGetDoneIds(this.doneIdsMonthly, 'doneIdsMonthly');
     this.getDate();
+    this.resetWeekly();
+    this.resetMonthly();
   }
 
   getDate() {
@@ -46,70 +47,61 @@ export class ProfileComponent implements OnInit {
     if (this.today == null || this.today == "null") {
       this.today = (new Date().toISOString().substring(0, 10)).toString();
       localStorage.setItem('date', this.today);
+      localStorage.setItem('dateWeekly', (Math.round(+new Date()/1000)).toString());
+      localStorage.setItem('dateMonthly', (Math.round(+new Date()/1000)).toString());
     } else {
       if (this.today == (new Date().toISOString().substring(0, 10)).toString()) {
         console.log("no new quests set")
       } else {
         localStorage.setItem('oldDate', this.today);
         localStorage.setItem('date', (new Date().toISOString().substring(0, 10)).toString());
-        this.deleteAllDoneIds();
+        localStorage.setItem('doneIdsDaily', '00000');
         this.todayPointsToYesterday();
         this.setNewQuests();
       }
     }
   }
 
+  resetWeekly() {
+    let todayMinusWeek = (Math.round(+new Date()/1000)-(7*24*60*60)).toString();
+    let dateQuestsWhereSet = localStorage.getItem('dateWeekly');
+    if (todayMinusWeek > dateQuestsWhereSet) {
+      localStorage.setItem('doneIdsWeekly', '00000');
+    }
+  }
+
+  resetMonthly() {
+    let todayMinusMonth = (Math.round(+new Date()/1000)-(30*7*24*60*60)).toString();
+    let dateQuestsWhereSet = localStorage.getItem('dateMonthly');
+    if (todayMinusMonth > dateQuestsWhereSet) {
+      localStorage.setItem('doneIdsMonthly', '00000');
+    }
+  }
+
   setQuestsIfNotAlready() {
-    let questChecker = localStorage.getItem('setNewQuestsSport');
+    let questChecker = localStorage.getItem('setNewDailyQuests');
     if (questChecker == null || questChecker == "null") {
       this.setNewQuests();
     }
   }
 
   setNewQuests() {
-    let sportQuests = this.QuestsSport["quests"].length;
-    let sportQuestsNumbers = []
-    for (var i=0; i< 3; i++) {
-       var number = Math.floor(Math.random() * ((sportQuests-1) - 0 + 1)) + 0;
-       while (sportQuestsNumbers.includes(number)) {
-        number = Math.floor(Math.random() * ((sportQuests-1) - 0 + 1)) + 0;
-       }
-       sportQuestsNumbers[i] = number;
-    }
-    localStorage.setItem('setNewQuestsSport', sportQuestsNumbers.toString())
+    this.setTheQuestsInStorage(this.QuestsDaily, 'setNewDailyQuests');
+    this.setTheQuestsInStorage(this.QuestsWeekly, 'setNewWeeklyQuests');
+    this.setTheQuestsInStorage(this.QuestsMonthly, 'setNewMonthlyQuests');
+  }
 
-    let mealQuests = this.QuestsMeal["quests"].length;
-    let mealQuestsNumbers = []
-    for (var i=0; i< 3; i++) { 
-      var number = Math.floor(Math.random() * ((mealQuests-1) - 0 + 1)) + 0;
-      while (mealQuestsNumbers.includes(number)) {
-       number = Math.floor(Math.random() * ((mealQuests-1) - 0 + 1)) + 0;
-      }
-      mealQuestsNumbers[i] = number;
-    }
-    localStorage.setItem('setNewQuestsMeal', mealQuestsNumbers.toString())
-
-    let bodyQuests = this.QuestsBody["quests"].length;
-    let bodyQuestsNumbers = []
-    for (var i=0; i< 3; i++) { 
-      var number = Math.floor(Math.random() * ((bodyQuests-1) - 0 + 1)) + 0;
-      while (bodyQuestsNumbers.includes(number)) {
-       number = Math.floor(Math.random() * ((bodyQuests-1) - 0 + 1)) + 0;
-      }
-      bodyQuestsNumbers[i] = number;
-    }
-    localStorage.setItem('setNewQuestsBody', bodyQuestsNumbers.toString())
-
-    let sustainabilityQuests = this.QuestsSustainability["quests"].length;
-    let sustainabilityQuestsNumbers = []
-    for (var i=0; i< 3; i++) { 
-      var number = Math.floor(Math.random() * ((sustainabilityQuests-1) - 0 + 1)) + 0;
-      while (sustainabilityQuestsNumbers.includes(number)) {
-       number = Math.floor(Math.random() * ((sustainabilityQuests-1) - 0 + 1)) + 0;
-      }
-      sustainabilityQuestsNumbers[i] = number;
-    }
-    localStorage.setItem('setNewQuestsSustainability', sustainabilityQuestsNumbers.toString())
+  setTheQuestsInStorage(QuestsObject, stoarageName) {
+  let quests = QuestsObject["quests"].length;
+  let questsNumbers = []
+  for (var i=0; i< 3; i++) {
+     var number = Math.floor(Math.random() * ((quests-1) - 0 + 1)) + 0;
+     while (questsNumbers.includes(number)) {
+      number = Math.floor(Math.random() * ((quests-1) - 0 + 1)) + 0;
+     }
+     questsNumbers[i] = number;
+  }
+  localStorage.setItem(stoarageName, questsNumbers.toString())
   }
 
   setOrSearchUsername() {
@@ -158,43 +150,12 @@ export class ProfileComponent implements OnInit {
     localStorage.setItem('userPointsToday', '0');
   }
 
-  setOrGetdoneIdsSport() {
-    this.doneIdsSport = localStorage.getItem('doneIdsSport');
-    if (this.doneIdsSport == null) {
-      localStorage.setItem('doneIdsSport', '00000');
-      this.doneIdsSport = localStorage.getItem('doneIdsSport');
+  setOrGetDoneIds(doneIds, doneIdsStorageName,) {
+    doneIds = localStorage.getItem(doneIdsStorageName);
+    if (doneIds == null) {
+      localStorage.setItem(doneIdsStorageName, '00000');
+      doneIds = localStorage.getItem(doneIdsStorageName);
     } 
-  }
-
-  setOrGetdoneIdsbodyfeel() {
-    this.doneIdsbodyfeel = localStorage.getItem('doneIdsbodyfeel');
-    if (this.doneIdsbodyfeel == null) {
-      localStorage.setItem('doneIdsbodyfeel', '00000');
-      this.doneIdsbodyfeel = localStorage.getItem('doneIdsbodyfeel');
-    } 
-  }
-
-  setOrGetdoneIdsmeal() {
-    this.doneIdsmeal = localStorage.getItem('doneIdsmeal');
-    if (this.doneIdsmeal == null) {
-      localStorage.setItem('doneIdsmeal', '00000');
-      this.doneIdsmeal = localStorage.getItem('doneIdsmeal');
-    } 
-  }
-
-  setOrGetdoneIdssustainability() {
-    this.doneIdssustainability = localStorage.getItem('doneIdssustainability');
-    if (this.doneIdssustainability == null) {
-      localStorage.setItem('doneIdssustainability', '00000');
-      this.doneIdssustainability = localStorage.getItem('doneIdssustainability');
-    } 
-  }
-
-  deleteAllDoneIds() {
-    localStorage.setItem('doneIdssustainability', '00000');
-    localStorage.setItem('doneIdsmeal', '00000');
-    localStorage.setItem('doneIdsbodyfeel', '00000');
-    localStorage.setItem('doneIdsSport', '00000');
   }
 
   resetUserName() {

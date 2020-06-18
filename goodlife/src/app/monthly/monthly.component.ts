@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import questData from '../quests/meal.json';
+import questData from '../quests/monthly.json';
 
 @Component({
   selector: 'app-monthly',
@@ -8,7 +8,7 @@ import questData from '../quests/meal.json';
 })
 export class MonthlyComponent implements OnInit {
   questArray = [];
-  questDoneIds = localStorage.getItem('doneIdsmeal');
+  questDoneIds = localStorage.getItem('doneIdsMonthly');
   Quests: any = questData;
   taskdone = false;
   noMoreQuest = false;
@@ -16,7 +16,7 @@ export class MonthlyComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    let numbers = localStorage.getItem('setNewQuestsMeal');
+    let numbers = localStorage.getItem('setNewMonthlyQuests');
     let convertedNumbers = numbers.split(",")
     console.log(convertedNumbers)
     this.questArray[0] = this.Quests["quests"][convertedNumbers[0]];
@@ -33,10 +33,10 @@ export class MonthlyComponent implements OnInit {
     userPointsToday = (parseInt(userPointsToday) + parseInt(points)).toString();
     localStorage.setItem('userPointsToday', userPointsToday);
 
-    let actualIds = localStorage.getItem('doneIdsmeal');
+    let actualIds = localStorage.getItem('doneIdsMonthly');
     actualIds = actualIds + ',' + id;
-    localStorage.setItem('doneIdsmeal', actualIds);
-    this.questDoneIds = localStorage.getItem('doneIdsmeal');
+    localStorage.setItem('doneIdsMonthly', actualIds);
+    this.questDoneIds = localStorage.getItem('doneIdsMonthly');
     setTimeout(() => 
     {
       this.taskdone=true;
