@@ -3,23 +3,58 @@
     {
         "questId": "00001",
         "questPoints": "🚴‍♀️🚴‍♂️ | 20 Punkte",
-        "questTitel": "Ab aufs Rad diese Woche!",
+        "questTitel": "Ab aufs Rad!",
         "questPointsValue": "20",
-        "questText": "Fahre heute Fahrrad!"
+        "questText": "Fahre diese Woche mindestens 15km Fahrrad!"
     },
     {
         "questId": "00002",
-        "questPoints": "🏋️‍♂️🏋️‍♀️ | 5 Punkte",
-        "questTitel": "Squads diese Woche!",
-        "questPointsValue": "5",
-        "questText": "Mache 10 Squats!"
+        "questPoints": "🧗‍♂️🧗‍♀️ | 55 Punkte",
+        "questTitel": "Bouldern!",
+        "questPointsValue": "55",
+        "questText": "Gehe diese Woche Bouldern. Die nächste Möglichkeit ist sicher nicht weit und der Sport ist sehr einsteigerfreundlich!"
     },
     {
         "questId": "00003",
-        "questPoints": "🏋️‍♂️🏋️‍♀️ | 5 Punkte",
-        "questTitel": "Liegestütz diese Woche!",
+        "questPoints": "🏃‍♀️🏃‍♂️ | 15 Punkte",
+        "questTitel": "Joggen!",
+        "questPointsValue": "15",
+        "questText": "Motiviere dich diese Woche Joggen zu gehen für mindestens 30min!"
+    },
+    {
+        "questId": "00004",
+        "questPoints": "📱 | 65 Punkte",
+        "questTitel": "Glatt Zuhause vergessen!",
+        "questPointsValue": "65",
+        "questText": "Lass dein Smartphone für einen Tag diese Woche einfach daheim und gehe ohne raus!"
+    },
+    {
+        "questId": "00005",
+        "questPoints": "📖 | 5 Punkte",
+        "questTitel": "Bücherwurm!",
         "questPointsValue": "5",
-        "questText": "Mache 10 Liegestütze!"
+        "questText": "Lese diese Woche ohne Ablenkung in einem Buch."
+    },
+    {
+        "questId": "00006",
+        "questPoints": "🌱 | 10 Punkte",
+        "questTitel": "Waschmittel?",
+        "questPointsValue": "10",
+        "questText": "Mache dir gedanken über dein Waschmittel. Ist es Tierversuchsfrei? Fairtrade? Nachhaltige Verpackung? Wenn nicht ändere etwas."
+    },
+    {
+        "questId": "00007",
+        "questPoints": "🚌 | 30 Punkte",
+        "questTitel": "Öffi's!",
+        "questPointsValue": "30",
+        "questText": "Verzichte diese Woche mindestens einen Tag auf ein Auto und nutze für all deine Wege öffentliche Verkehrsmittel oder das Fahrrad."
+    },
+    {
+        "questId": "00008",
+        "questPoints": "🥩 | 65 Punkte",
+        "questTitel": "Lebe diese Woche Vegan",
+        "questPointsValue": "65",
+        "questText": "Schaffst du es eine Woche auf tierische Produkte zu verzichten? Dabei könntest du viel gutes für deinen Körper und deine Umwelt tun."
     }
     ]
 }

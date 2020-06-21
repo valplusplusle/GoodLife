@@ -22,6 +22,7 @@ export class WeeklyComponent implements OnInit {
     this.questArray[0] = this.Quests["quests"][convertedNumbers[0]];
     this.questArray[1] = this.Quests["quests"][convertedNumbers[1]];
     this.questArray[2] = this.Quests["quests"][convertedNumbers[2]];
+    this.questArray[3] = this.Quests["quests"][convertedNumbers[3]];
     this.testIfAllQuestsDone();
   }
   addPointsAndDoneQuest(points, id) {

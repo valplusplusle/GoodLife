@@ -86,15 +86,15 @@ export class ProfileComponent implements OnInit {
   }
 
   setNewQuests() {
-    this.setTheQuestsInStorage(this.QuestsDaily, 'setNewDailyQuests');
-    this.setTheQuestsInStorage(this.QuestsWeekly, 'setNewWeeklyQuests');
-    this.setTheQuestsInStorage(this.QuestsMonthly, 'setNewMonthlyQuests');
+    this.setTheQuestsInStorage(this.QuestsDaily, 'setNewDailyQuests', 3);
+    this.setTheQuestsInStorage(this.QuestsWeekly, 'setNewWeeklyQuests', 4);
+    this.setTheQuestsInStorage(this.QuestsMonthly, 'setNewMonthlyQuests', 4);
   }
 
-  setTheQuestsInStorage(QuestsObject, stoarageName) {
+  setTheQuestsInStorage(QuestsObject, stoarageName, counter) {
   let quests = QuestsObject["quests"].length;
   let questsNumbers = []
-  for (var i=0; i< 3; i++) {
+  for (var i=0; i< counter; i++) {
      var number = Math.floor(Math.random() * ((quests-1) - 0 + 1)) + 0;
      while (questsNumbers.includes(number)) {
       number = Math.floor(Math.random() * ((quests-1) - 0 + 1)) + 0;
@@ -161,6 +161,14 @@ export class ProfileComponent implements OnInit {
   resetUserName() {
     localStorage.setItem('UserName', null);
     this.setOrSearchUsername()
+  }
+
+  invite() {
+    let score = localStorage.getItem('userPoints');
+    let textA = "https://wa.me/?text=Schau+mal+mein+aktueller+Highscore%3A+" 
+    let textB = ".+Kannst+du+den+knacken%3F+https%3A%2F%2Fblank42.de%2Fgoodlife" 
+    let text = textA + score.toString() + textB;
+    return text;
   }
 
 }

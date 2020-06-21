@@ -2,9 +2,9 @@
     "quests": [
     {
         "questId": "00001",
-        "questPoints": "🚴‍♀️🚴‍♂️ | 20 Punkte",
+        "questPoints": "🚴‍♀️🚴‍♂️ | 12 Punkte",
         "questTitel": "Ab aufs Rad!",
-        "questPointsValue": "20",
+        "questPointsValue": "12",
         "questText": "Fahre heute Fahrrad!"
     },
     {
@@ -20,6 +20,76 @@
         "questTitel": "Liegestütz!",
         "questPointsValue": "5",
         "questText": "Mache 10 Liegestütze!"
+    },
+    {
+        "questId": "00004",
+        "questPoints": "💧 | 15 Punkte",
+        "questTitel": "Wasser!",
+        "questPointsValue": "15",
+        "questText": "Trinke heute nur Wasser, keine Säfte, keine zero Produkte. Tee ist erlaubt!"
+    },
+    {
+        "questId": "00005",
+        "questPoints": "📱 | 7 Punkte",
+        "questTitel": "Innere Ruhe",
+        "questPointsValue": "7",
+        "questText": "Verzichte heute Abend für 1 Stunde auf dein Smartphone. Schalte es ab und sei für keine sozialen Medien erreichbar!"
+    },
+    {
+        "questId": "00006",
+        "questPoints": "🔋 | 42 Punkte",
+        "questTitel": "Stromlos! MEGA Aufgabe!",
+        "questPointsValue": "42",
+        "questText": "Außerhalb deines Berufsaltags ist Strom Tabu. Keine aktiven verbraucher! Dinge mit Akku dürfen bis zu ihrer Entladung verwendet werden. Licht am Abend oder Fernsehgeräte zb NICHT!"
+    },
+    {
+        "questId": "00007",
+        "questPoints": "📱 | 7 Punkte",
+        "questTitel": "Innere Ruhe",
+        "questPointsValue": "7",
+        "questText": "Verzichte heute Abend für 1 Stunde auf dein Smartphone. Schalte es ab und sei für keine sozialen Medien erreichbar!"
+    },
+    {
+        "questId": "00008",
+        "questPoints": "🥩 | 20 Punkte",
+        "questTitel": "Lebe heute Vegan",
+        "questPointsValue": "20",
+        "questText": "Und informiere dich über die Umweltbelastung durch Massentierhaltung."
+    },
+    {
+        "questId": "00009",
+        "questPoints": "🕯 | 33 Punkte",
+        "questTitel": "Superchallange!",
+        "questPointsValue": "33",
+        "questText": "Verzichte heute abend zu deiner 'PrimeTime' 3h komplett auf Strom! Ich hoffe du hast Kerzen daheim."
+    },
+    {
+        "questId": "00010",
+        "questPoints": "🏋️‍♂️🏋️‍♀️ | 5 Punkte",
+        "questTitel": "Sit Ups!",
+        "questPointsValue": "5",
+        "questText": "Mache 20 Sit Ups!"
+    },
+    {
+        "questId": "00011",
+        "questPoints": "🏋️‍♂️🏋️‍♀️ | 20 Punkte",
+        "questTitel": "Workout Day!",
+        "questPointsValue": "20",
+        "questText": "Mache ein beliebiges Workout auf Youtube findest du einige davon! (Min. 20min.)"
+    },
+    {
+        "questId": "00012",
+        "questPoints": "🚿 | 15 Punkte",
+        "questTitel": "Schonmal was von Kneipp gehört?",
+        "questPointsValue": "15",
+        "questText": "Heute wird kalt geduscht! Nicht vergessen Herzfern beginnen."
+    },
+    {
+        "questId": "00013",
+        "questPoints": "🧘‍♂️🧘‍♀️ | 18 Punkte",
+        "questTitel": "Meditation",
+        "questPointsValue": "18",
+        "questText": "Setzte dich 30 Minuten auf den Boden in eine bequeme Position, schalte alle Störquellen ab und versuche nur deine eigene Stimme wahrzunehmen."
     }
     ]
 }
