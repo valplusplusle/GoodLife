@@ -32,12 +32,12 @@ export class ProfileComponent implements OnInit {
     this.setOrSearchUsername();
     this.setOrGetPoints();
     this.setQuestsIfNotAlready();
-    this.setOrGetPointsYesterday();
-    this.setOrGetPointsToday();
     this.setOrGetDoneIds(this.doneIdsDaily, 'doneIdsDaily');
     this.setOrGetDoneIds(this.doneIdsWeekly, 'doneIdsWeekly');
     this.setOrGetDoneIds(this.doneIdsMonthly, 'doneIdsMonthly');
     this.getDate();
+    this.setOrGetPointsYesterday();
+    this.setOrGetPointsToday();
     this.resetWeekly();
     this.resetMonthly();
   }
@@ -57,7 +57,7 @@ export class ProfileComponent implements OnInit {
         localStorage.setItem('date', (new Date().toISOString().substring(0, 10)).toString());
         localStorage.setItem('doneIdsDaily', '00000');
         this.todayPointsToYesterday();
-        this.setNewQuests();
+        this.setTheQuestsInStorage(this.QuestsDaily, 'setNewDailyQuests', 3);
       }
     }
   }
@@ -67,6 +67,7 @@ export class ProfileComponent implements OnInit {
     let dateQuestsWhereSet = localStorage.getItem('dateWeekly');
     if (todayMinusWeek > dateQuestsWhereSet) {
       localStorage.setItem('doneIdsWeekly', '00000');
+      this.setTheQuestsInStorage(this.QuestsWeekly, 'setNewWeeklyQuests', 4);
     }
   }
 
@@ -75,6 +76,7 @@ export class ProfileComponent implements OnInit {
     let dateQuestsWhereSet = localStorage.getItem('dateMonthly');
     if (todayMinusMonth > dateQuestsWhereSet) {
       localStorage.setItem('doneIdsMonthly', '00000');
+      this.setTheQuestsInStorage(this.QuestsMonthly, 'setNewMonthlyQuests', 4);
     }
   }
 
@@ -106,8 +108,8 @@ export class ProfileComponent implements OnInit {
 
   setOrSearchUsername() {
     this.userName = localStorage.getItem('UserName');
-    if (this.userName == null || this.userName == "null" || this.userName == "Set Your Username") {
-      localStorage.setItem('UserName', 'Set Your Username');
+    if (this.userName == null || this.userName == "null" || this.userName == "Gib uns deinen Namen") {
+      localStorage.setItem('UserName', 'Gib uns deinen Namen');
       this.userName = localStorage.getItem('UserName');
       this.userNameIsSet = false;
     } else {
